@@ -1,0 +1,32 @@
+.middle{
+    text-align: center;
+}
+
+h1{
+    font-size: 60px;
+    margin: 0px 0px 0px 0px;
+}
+
+h2{
+    font-size: 40px;
+    margin: 0px 0px 0px 0px;
+}
+h3{
+    font-size: 25px;
+    margin: 0px 0px 0px 0px;
+}
+
+
+#Texts{
+    display: flex;
+    flex-direction: column;
+}
+
+#Texts > h1{
+    background-color: aqua;
+}
+
+#Buttons{
+    display: flex;
+    flex-direction: column;
+}
