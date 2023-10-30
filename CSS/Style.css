@@ -347,7 +347,7 @@ Slider elements
 
 #SliderRect{
     border-style: solid;
-    border-color: black;
+    border-color: #133c55;
     border-width: 2px;
     background-color: #386fa4;
     padding: 10vh 30px;
@@ -361,7 +361,7 @@ Slider elements
 
 #SliderTriangleOutline{
     border-top: 30px solid transparent;
-	border-left: 50px solid black;
+	border-left: 50px solid #133c55;
 	border-bottom: 30px solid transparent;
     position: absolute;
     margin-top: 46vh;
@@ -373,7 +373,7 @@ Slider elements
     background-color: #386fa4;
     border-style: solid;
     position: absolute;
-    border-color: black;
+    border-color: #133c55;
     border-width: 2px;
     border-radius: 0px 4px 4px 0px;
     width: 250px;
@@ -421,7 +421,7 @@ Slider elements
     height: 5vh;
     left: -250px;
     z-index: 5;
-    border-color: black;
+    border-color: #133c55;
     border-style: solid;
     border-width: 2px;
     background: radial-gradient(rgb(89, 165, 216),rgb(56, 111, 164));
@@ -432,6 +432,9 @@ Slider elements
     text-align: center;
     user-select: none;
     font-size: 29px;
+}
+.SliderButtons > h3:hover{
+    color: #133c55;
 }
 
 #SliderOverlay{
