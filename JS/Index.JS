@@ -26,7 +26,10 @@ let switchingImgBool = false;
 let ImgCountABoutme = 0;
 let AllPicturesAboutMe =[
     "IMG/AboutMeImgs/Picture1.png",
-    "IMG/AboutMeImgs/Picture2.png"
+    "IMG/AboutMeImgs/Picture2.png",
+    "IMG/AboutMeImgs/Picture3.png",
+    "IMG/AboutMeImgs/Picture4.png",
+    "IMG/AboutMeImgs/Picture5.png"
 ]
 
 
@@ -267,15 +270,25 @@ function ImageSwitchABoutMe(){
         ElementFadeout(AboutmeImg1, 300)
 
         setTimeout(function(){
-            let Img1 = AboutMeImg1.src
             let Img2 = AboutMeImg2.src
+            
+            if(ImgCountABoutme == AllPicturesAboutMe.length - 1)
+            {
+                ImgCountABoutme = 0
+            } else{
+                ImgCountABoutme++;
+            }
 
-            AboutMeImg2.src = Img1
             AboutMeImg1.src = Img2
             AboutMeImg1.style.opacity = 1;
 
+            if(AllPicturesAboutMe.length == ImgCountABoutme){
+                AboutMeImg2.src = AllPicturesAboutMe[0];
+            } else {
+                AboutMeImg2.src = AllPicturesAboutMe[ImgCountABoutme];
+            }
         }, 1400)
-    },4000)
+    },5000)
 }
 
 /*

@@ -308,36 +308,46 @@ Project 1 elements
 ------------------------------------------------------------------------------------------------------------------
 */
 
+#Project3{
+    display: grid;
+    grid-template-columns: repeat(25, 4vw);
+    grid-template-rows: repeat(17, 10vh);
+    background-color: #59a5d8; 
+}
+
+
 #Project1{
     display: grid;
     grid-template-columns: repeat(25, 4vw);
     grid-template-rows: repeat(23, 10vh);
-    background-image: linear-gradient(#91E5F6, #59a5d8 , #91E5F6, #59a5d8);
+    background-color: #59a5d8;
 }
 
 #Projects1Img{
     background-color: gray;
+    width: 100vw;
     grid-column: 1/26;
     grid-row: 1/11;
 }
 #Project1Name{
-    grid-column: 7/20;
+    grid-column: 7/19;
     grid-row: 4/6;
     text-align: center;
 }
 
 #Project1Boxes1{
-    background-color: #386fa4 ;
+    background-color: #91E5F6 ;
     grid-column: 3/24;
     grid-row: 12/17;
-    border-radius: 20px;
+    border-radius: 5px;
+    
 }
 
 #Project1Boxes2{
-    background-color: #386fa4;
+    background-color: #91E5F6;
     grid-column: 3/24;
     grid-row: 18/23;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 #Project1TitleGame{
