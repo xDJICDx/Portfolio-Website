@@ -247,38 +247,58 @@ Projects elements
 #Projects{
     display: grid;
     grid-template-columns: repeat(25, 4vw);
-    grid-template-rows: repeat(7, 10vh) repeat(6, 5vh);
+    grid-template-rows:repeat(2, 5vh) repeat(6, 10vh) repeat(6, 5vh);
+    background-image: linear-gradient(#91E5F6, #59a5d8);
+}
+
+#MoveButton{
+    grid-column: 12/15 ;
+    grid-row: 11/12;
+    width: 12vw;
 }
 
 #ProjectsMainIMG{
-    grid-column: 10/17;
-    grid-row: 2/7;
+    position: absolute;
+    left: 36vw;
+    top: 5vh;
     width: 28vw;
-    height: 60vh;
+    height: 70vh;
     background-color: black ;
     color: blue;
+    z-index: 1;
 }
 
 #ProjectsLeftIMG{
-    grid-column: 8/12;
-    grid-row: 3/7;
+    position: absolute;
+    left: 28vw;
+    top: 20vh;
     width: 16vw;
     height: 40vh;
     background-color: gray;
 }
 
 #ProjectsRightIMG{
-    grid-column: 15/19;
-    grid-row: 3/7;
+    position: absolute;
+    left: 56vw;
+    top: 20vh;
     width: 16vw;
     height: 40vh;
+    background-color: gray;
+}
+
+#ProjectsBehindIMG{
+    position: absolute;
+    left: 50vw;
+    top: 40vh;
+    width: 0vh;
+    height: 0vh;
     background-color: gray;
 }
 
 #nameofproject{
     text-align: center;
     grid-column: 9/18;
-    grid-row: 10/12;
+    grid-row: 12/13;
     font-size: 40px;
 }
 

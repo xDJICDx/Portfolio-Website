@@ -24,8 +24,17 @@ let movementout = 0;
 let movementIn = 0;
 let switchingImgBool = false;
 let ImgCountABoutme = 0;
-let AllPictures =[
+let AllPicturesAboutMe =[
     
+]
+
+let ProjectsMoveDelay = false;
+let ProjectsCurrentPic = 0;
+let AllPicturesProjects = [
+    "IMG/Mirrort.png",
+    " ",
+    "IMG/PP.png",
+    "IMG/PoolGame.png",
 ]
 
 /*amount of img used in aboutme -1*/
@@ -256,6 +265,126 @@ function ImageSwitchABoutMe(){
         }, 1400)
     },4000)
 }
+
+/*
+------------------------------------------------------------------------------------------------------------------
+Image swap for projects page
+------------------------------------------------------------------------------------------------------------------
+*/
+
+function MoveProjectsLeft(){
+if(!ProjectsMoveDelay){
+    let IntervalProjectsLeft = null;
+    let movementProjects = 0;
+    ProjectsMoveDelay = true
+    
+
+    let IMGleft = document.getElementById("ProjectsLeftIMG");
+    let IMGRight = document.getElementById("ProjectsRightIMG");
+    let IMGMid = document.getElementById("ProjectsMainIMG");
+    let IMGBehind = document.getElementById("ProjectsBehindIMG");
+
+    
+
+    IMGRight.style.zIndex = 2;
+
+    clearInterval(IntervalProjectsLeft);
+    IntervalProjectsLeft = setInterval(projectsleft, 2)
+
+    function projectsleft(){
+        if (movementProjects == 120){
+            clearInterval(IntervalProjectsLeft);
+            
+            function resetIMG(){
+                IMGleft.style.width = 16 + "vw";
+                IMGleft.style.left = 28 + "vw";
+                IMGleft.style.height = 40 + "vh";
+                IMGleft.style.top = 20 + "vh";
+                
+                IMGMid.style.width = 28 + "vw"; 
+                IMGMid.style.left =  36 + "vw";
+                IMGMid.style.height = 70 + "vh";
+                IMGMid.style.top = 5 + "vh"; 
+    
+                IMGRight.style.width = 16 + "vw"; 
+                IMGRight.style.left = 56 + "vw"; 
+                IMGRight.style.height = 40 + "vh"; 
+                IMGRight.style.top = 20 + "vh"; 
+                
+                IMGBehind.style.width = 0 + "vw";
+                IMGBehind.style.left = 50 + "vw"; 
+                IMGBehind.style.height = 0 + "vh";
+                IMGBehind.style.top = 40 + "vh";
+
+                IMGRight.style.zIndex = 0;
+                ProjectsMoveDelay = false;
+
+                ProjectsCurrentPic++;
+
+                if(ProjectsCurrentPic > AllPicturesProjects.length - 1){
+                    ProjectsCurrentPic = 0;
+                }
+                
+                IMGMid.src = AllPicturesProjects[ProjectsCurrentPic];
+                
+                if(ProjectsCurrentPic == 0){
+                    IMGleft.src = AllPicturesProjects[AllPicturesProjects.length - 1];
+                } else{
+                    IMGleft.src = AllPicturesProjects[ProjectsCurrentPic - 1];
+                }
+
+                if(ProjectsCurrentPic == AllPicturesProjects.length - 1){
+                    IMGRight.src = AllPicturesProjects[0];
+                } else{
+                    IMGRight.src = AllPicturesProjects[ProjectsCurrentPic + 1];
+                }
+                
+                if(ProjectsCurrentPic > AllPicturesProjects.length - 2){
+                    IMGBehind.src = AllPicturesProjects[1];
+                } else if(ProjectsCurrentPic == AllPicturesProjects.length - 2){
+                    IMGBehind.src = AllPicturesProjects[0];
+                } else {
+                    IMGBehind.src = AllPicturesProjects[ProjectsCurrentPic + 2];
+                }
+
+                
+            }
+
+
+
+            resetIMG();
+
+
+        }else{
+            movementProjects++;
+            
+            IMGleft.style.width = 16 - (movementProjects / 7.5) + "vw";
+            IMGleft.style.left = 28 + (movementProjects / 120 * 22) + "vw";
+            IMGleft.style.height = 40  - (movementProjects / 3) + "vh";
+            IMGleft.style.top = 20 + (movementProjects / 6) + "vh"
+            
+            IMGMid.style.width = 28 - (movementProjects / 10) + "vw";
+            IMGMid.style.left =  36 - (movementProjects/120 * 8) + "vw";
+            IMGMid.style.height = 70 - (movementProjects / 4) + "vh";
+            IMGMid.style.top = 5 + (movementProjects/ 8) + "vh";
+
+            IMGRight.style.width = 16 + (movementProjects / 10) + "vw";
+            IMGRight.style.left = 56 - (movementProjects / 6) + "vw";
+            IMGRight.style.height = 40 + (movementProjects / 4) + "vh";
+            IMGRight.style.top = 20 - (movementProjects / 8) + "vh";
+            
+            IMGBehind.style.width = (movementProjects / 7.5) + "vw"
+            IMGBehind.style.left = 50 + (movementProjects / 20) + "vw"
+            IMGBehind.style.height = (movementProjects / 3) + "vh"
+            IMGBehind.style.top = 40 - (movementProjects / 6) + "vh";
+        }
+    }
+}
+
+
+}
+
+
 
 
 
