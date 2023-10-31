@@ -25,17 +25,28 @@ let movementIn = 0;
 let switchingImgBool = false;
 let ImgCountABoutme = 0;
 let AllPicturesAboutMe =[
-    
+    "IMG/AboutMeImgs/Picture1.png",
+    "IMG/AboutMeImgs/Picture2.png"
 ]
+
 
 let ProjectsMoveDelay = false;
 let ProjectsCurrentPic = 0;
 let AllPicturesProjects = [
     "IMG/Mirrort.png",
-    " ",
-    "IMG/PP.png",
+    "IMG/GameJam.png",
+    "IMG/Webshop.png",
     "IMG/PoolGame.png",
 ]
+
+let allTextProjects = [
+    "Mirrort",
+    "GameJam",
+    "WebShop",
+    "Pool Game"
+]
+
+
 
 /*amount of img used in aboutme -1*/
 const MaxImgCount = 1;
@@ -196,6 +207,7 @@ function SliderOut(){
                 for(let i = 0; i < Slider.length; i++){
                     Slider[i].style.marginLeft = (250 - movementout) + "px" ;
                 }  
+                
             }
         }
     }
@@ -285,6 +297,7 @@ if(!ProjectsMoveDelay){
     let IMGBehind = document.getElementById("ProjectsBehindIMG");
 
     
+    
 
     IMGRight.style.zIndex = 2;
 
@@ -347,6 +360,7 @@ if(!ProjectsMoveDelay){
                     IMGBehind.src = AllPicturesProjects[ProjectsCurrentPic + 2];
                 }
 
+                document.getElementById("nameofproject").innerText = allTextProjects[ProjectsCurrentPic];
                 
             }
 
@@ -382,6 +396,17 @@ if(!ProjectsMoveDelay){
 }
 
 
+}
+
+function changeSite(){
+    window.location.href = "Project" + (ProjectsCurrentPic + 1) + ".html"
+}
+
+window.onscroll = function scroll(){
+for(let i = 0; i < Slider.length; i++){
+    Slider[i].style.marginTop = window.scrollY + "px" ;
+} 
+document.getElementById("SliderBackground").style.marginTop = window.scrollY + "px" ;
 }
 
 
