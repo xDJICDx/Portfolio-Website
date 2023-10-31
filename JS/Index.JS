@@ -17,6 +17,7 @@ let AboutMeImg1 = document.getElementById("AboutmeImg1");
 let AboutMeImg2 = document.getElementById("AboutmeImg2");
 const MainMenuBody = document.getElementById("MainMenu");
 const AboutMeBody = document.getElementById("Aboutme");
+let projectLangChecker = document.getElementById("ProjectsEnglish");
 let SliderCheck = false;
 let SliderOutBool = false;
 let SliderInBool = true;
@@ -89,6 +90,8 @@ if(MainMenuBody != undefined){
 if(AboutMeBody != undefined){
     ImageSwitchABoutMe()
 }
+
+
 
 
 
@@ -334,7 +337,7 @@ if(!ProjectsMoveDelay){
     
                 IMGRight.style.width = 16 + "vw"; 
                 IMGRight.style.left = 56 + "vw"; 
-                IMGRight.style.height = 40 + "vh"; 
+                IMGRight.style.height = 40  + "vh"; 
                 IMGRight.style.top = 20 + "vh"; 
                 
                 IMGBehind.style.width = 0 + "vw";
@@ -376,7 +379,7 @@ if(!ProjectsMoveDelay){
                 document.getElementById("nameofproject").innerText = allTextProjects[ProjectsCurrentPic];
                 
             }
-
+            
 
 
             resetIMG();
@@ -412,7 +415,12 @@ if(!ProjectsMoveDelay){
 }
 
 function changeSite(){
-    window.location.href = "Project" + (ProjectsCurrentPic + 1) + ".html"
+    if(projectLangChecker != null){
+        window.location.href = "Project" + (ProjectsCurrentPic + 1) + ".html"
+    } else{
+        window.location.href = "Project" + (ProjectsCurrentPic + 1) + " 2.html"
+    }
+    console.log(projectLangChecker);
 }
 
 window.onscroll = function scroll(){
@@ -421,9 +429,3 @@ for(let i = 0; i < Slider.length; i++){
 } 
 document.getElementById("SliderBackground").style.marginTop = window.scrollY + "px" ;
 }
-
-
-
-
-
-
