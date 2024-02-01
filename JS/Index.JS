@@ -41,13 +41,15 @@ let AllPicturesProjects = [
     "IMG/GameJam.png",
     "IMG/Webshop.png",
     "IMG/PoolGame.png",
+    "IMG/ProjectPlay.png",
 ]
 
 let allTextProjects = [
     "Mirrort",
     "GameJam",
     "WebShop",
-    "Pool Game"
+    "Pool Game",
+    "Project Play",
 ]
 
 
@@ -420,7 +422,6 @@ function changeSite(){
     } else{
         window.location.href = "Project" + (ProjectsCurrentPic + 1) + " 2.html"
     }
-    console.log(projectLangChecker);
 }
 
 window.onscroll = function scroll(){

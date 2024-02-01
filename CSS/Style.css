@@ -333,8 +333,10 @@ Project 1 elements
 #Projects1Img{
     background-color: gray;
     width: 100vw;
+    height: 100vh;
     grid-column: 1/26;
     grid-row: 1/11;
+    
 }
 #Project1Name{
     grid-column: 7/19;
@@ -497,9 +499,7 @@ Slider elements
     top: 30vh;
 }
 #SliderButton8{
-    top: 60vh;
-    background-image: none;
-    border: none;
+    top: calc(35vh - 1px);
 }
 
 #SliderEmail{
@@ -548,4 +548,9 @@ Slider elements
 
 .Slider{
     z-index: 8;
+}
+
+#TextImgSize{
+    width: 540px;
+    height: 270px;
 }
